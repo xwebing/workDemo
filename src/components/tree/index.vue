@@ -9,11 +9,25 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineOptions({
   name: 'data-tree',
 })
-defineProps({ datalist: Array })
+type DataItem = {
+  name: string
+  url: string
+  children?: DataItem[]
+}
+interface Props {
+  datalist: DataItem[]
+}
+// 没有默认值
+defineProps<Props>()
+// 有默认值
+// withDefaults(defineProps<Props>(), {
+//   msg: '子组件默认值',
+//   list: () => [1, 2, 3],
+// })
 </script>
 
 <style lang="less" scoped>

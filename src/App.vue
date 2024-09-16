@@ -8,13 +8,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 import DataTree from '@/components/tree/index.vue'
 
-const demoList = [
+type DataItem = {
+  name: string
+  url: string
+  children?: DataItem[]
+}
+
+const demoList: DataItem[] = [
   {
     name: '文本',
+    url: '/',
     children: [
       {
         name: '文本溢出',
@@ -61,12 +68,12 @@ const datalistTemp = computed(() => {
   return treeSearch(demoList, searchStr.value)
 })
 
-function treeSearch(list, key) {
+function treeSearch(list: DataItem[], key: string) {
   if (!key) {
     return list
   }
-  const result = []
-  list.forEach((item) => {
+  const result: DataItem[] = []
+  list.forEach((item: DataItem) => {
     if (item.name.includes(key)) {
       result.push(item)
     } else if (item?.children?.length) {
