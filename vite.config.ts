@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/smartRobot',
+  base: '/workDemo',
   build: {
     outDir: './docs'
   },
