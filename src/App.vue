@@ -56,8 +56,8 @@ const demoList: DataItem[] = [
         ],
       },
       {
-        name: '文本省略号',
-        url: '/',
+        name: 'tooltip',
+        url: '/text-tooltips',
       },
     ],
   },

@@ -32,8 +32,6 @@ defineProps<Props>()
 
 <style lang="less" scoped>
 .demo-item-name {
-  counter-reset: count;
-  counter-increment: count;
   display: inline-flex;
   height: 30px;
   span {
@@ -47,9 +45,16 @@ defineProps<Props>()
   }
 }
 
-.demo-item-name::before {
-  content: counters(count, '-');
-  color: transparent;
+// .demo-item-name {
+//   counter-reset: count;
+//   counter-increment: count;
+//   &::before {
+//     content: counters(count, '-');
+//     color: transparent;
+//   }
+// }
+.demo-list {
+  margin-left: 24px;
 }
 
 .demo-list:has(.demo-list) > .demo-item-name > .group-name::before {
@@ -90,6 +95,7 @@ defineProps<Props>()
       center no-repeat;
   }
 }
+
 // ul {
 //   counter-reset: listCounter; /*初始化计数器*/
 // }
