@@ -61,6 +61,16 @@ const demoList: DataItem[] = [
       },
     ],
   },
+  {
+    name: '布局',
+    url: '/',
+    children: [
+      {
+        name: 'flex卡片拖拽-50%-100%',
+        url: '/layout/flex/flex-1',
+      },
+    ],
+  },
 ]
 const searchStr = ref('')
 
@@ -95,6 +105,7 @@ function treeSearch(list: DataItem[], key: string) {
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .layout {
   display: flex;

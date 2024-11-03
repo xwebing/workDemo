@@ -24,7 +24,11 @@ const router = createRouter({
         {
           path: '/text-tooltips',
           component: () => import('@/components/text/hover/tooltips.vue')
-        }
+        },
+        {
+          path: '/layout/flex/flex-1',
+          component: () => import('@/components/layout/flex/flex-1.vue')
+        },
       ]
     },
   ]
